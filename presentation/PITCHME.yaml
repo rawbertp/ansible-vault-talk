@@ -1,0 +1,47 @@
+# GitPitch In-60-Seconds - A Very Short Tutorial.
+#
+
+#
+# Theme Setting
+# Doc: https://gitpitch.com/docs/settings/theme
+#
+theme : simple
+
+#
+# Theme-Override Setting
+# Doc: https://gitpitch.com/docs/settings/custom-theme
+#
+theme-override: assets/css/PITCHME.css
+
+#
+# Logo Setting
+# https://gitpitch.com/docs/settings/logo
+#
+logo : presentation/assets/img/be-logo.png
+logo-postion : bottom-left
+
+#
+# Layout Setting
+# Doc: https://gitpitch.com/docs/settings/layout
+#
+layout : center
+
+#
+# Footnote Setting
+# Doc: https://gitpitch.com/docs/settings/footnote
+#
+footnote : "Ansible Vault"
+
+#
+# Published Setting
+# Doc: https://gitpitch.com/docs/settings/published
+#
+published : false
+
+#
+# Twitter Card Settings [Pro Only]
+# Doc: https://gitpitch.com/docs/settings/twitter-card
+#
+#title : "Ansible Vault Introduction"
+#description : "A short tutorial on using Ansible Vault"
+#thumbnail : https://gitpitch.com/gpimg/tutorial-thumb.png
