@@ -12,6 +12,10 @@ A Talk Explaining Ansible-Vault Features and Usage
 * AES256 cipher algorithm
 * Very simplistic/basic solution
 
+---?image=presentation/assets/img/hawaii.jpg&size=auto 100%
+
+## @color[white](Why use it?)
+
 ---
 
 ## Usage
