@@ -6,7 +6,7 @@ A Talk Explaining Ansible-Vault Features and Usage
 
 ---
 
-## Introduction
+### Introduction
 
 * Ansible core feature
 * Used to encrypt sensitive data
@@ -15,11 +15,11 @@ A Talk Explaining Ansible-Vault Features and Usage
 
 ---?image=presentation/assets/img/hawaii.jpg&size=auto 100%
 
-## @color[white](Why use it?)
+### @color[white](Why use it?)
 
 ---
 
-## Documentation
+### Documentation
 
 https://docs.ansible.com/ansible/latest/user_guide/vault.html
 
@@ -27,7 +27,7 @@ https://docs.ansible.com/ansible/latest/cli/ansible-vault.html
 
 ---
 
-## Some Key Principles
+### Some Key Principles
 
 * Do not store _any_ unencrypted passwords/sensitive data _anywhere_
   * passwords, API keys, SSH keys, GDPR-relevant information, etc. pp...
@@ -37,7 +37,7 @@ https://docs.ansible.com/ansible/latest/cli/ansible-vault.html
 
 ---
 
-## Usage
+### Usage (1)
 
 ```bash
 Usage: ansible-vault [create|decrypt|edit|encrypt|encrypt_string|rekey|view] [options] [vaultfile.yml]
@@ -54,4 +54,48 @@ Options:
   --vault-password-file=VAULT_PASSWORD_FILES
                         vault password file
 ```
+
+---
+
+### Usage (2)
+
+`ansible-vault` can be used to encrypt/decrypt
+
+* whole files or
+* individual values
+
+---
+
+### Usage: Encrypt/Decrypt Whole File
+
+#### Encrypt
+
+```bash
+ansible-vault encrypt file.yml
+```
+
+#### Decrypt
+
+```bash
+ansible-vault decrypt file.yml
+```
+
+---
+
+### Usage: View/Edit Encrypted File
+
+#### View
+
+```bash
+ansible-vault view file.yml
+```
++++
+
+#### Edit
+
+```bash
+ansible-vault edit file.yml
+```
+
+* Use `edit` whenvever possible as it helps you not to check in unencrypted files!
 
