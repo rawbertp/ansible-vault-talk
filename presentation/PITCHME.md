@@ -8,6 +8,7 @@ A Talk Explaining Ansible-Vault Features and Usage
 
 ## Introduction
 
+* Ansible core feature
 * Used to encrypt sensitive data
 * AES256 cipher algorithm
 * Very simplistic/basic solution
@@ -15,6 +16,24 @@ A Talk Explaining Ansible-Vault Features and Usage
 ---?image=presentation/assets/img/hawaii.jpg&size=auto 100%
 
 ## @color[white](Why use it?)
+
+---
+
+## Documentation
+
+https://docs.ansible.com/ansible/latest/user_guide/vault.html
+
+https://docs.ansible.com/ansible/latest/cli/ansible-vault.html
+
+---
+
+## Some Key Principles
+
+* Do not store _any_ unencrypted passwords/sensitive data _anywhere_
+  * passwords, API keys, SSH keys, GDPR-relevant information, etc. pp...
+* No exceptions apply!
+* Do not use the _same_ password for _all environments_.
+* And of course: Do not store the Vault password in unsecure places/environments!
 
 ---
 
