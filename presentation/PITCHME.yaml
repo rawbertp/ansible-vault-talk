@@ -11,7 +11,7 @@ theme : simple
 # Theme-Override Setting
 # Doc: https://gitpitch.com/docs/settings/custom-theme
 #
-theme-override: presentation/assets/css/PITCHME.css
+#theme-override: presentation/assets/css/PITCHME.css
 
 #
 # Logo Setting
@@ -24,7 +24,7 @@ logo-postion : bottom-right
 # Layout Setting
 # Doc: https://gitpitch.com/docs/settings/layout
 #
-layout : center
+layout : center-left
 
 #
 # Footnote Setting
@@ -36,7 +36,7 @@ footnote : "Ansible Vault"
 # Published Setting
 # Doc: https://gitpitch.com/docs/settings/published
 #
-published : false
+published : true
 
 #
 # Twitter Card Settings [Pro Only]

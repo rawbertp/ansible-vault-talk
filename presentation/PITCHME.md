@@ -61,20 +61,30 @@ Options:
 
 `ansible-vault` can be used to encrypt/decrypt
 
+@ul[square-bullets](false)
 * whole files or
-* individual values
+* individual strings/values
+@ulend
 
 ---
 
-### Encrypt file
+### Encrypt/decrypt file
+
+```bash
+ansible-vault [create|decrypt|edit|encrypt|rekey|view] [options] [vaultfile.yml]
+```
+
++++
+
+#### Encrypt file
 
 ```bash
 ansible-vault encrypt file.yml
 ```
 
----
++++
 
-### Decrypt file
+#### Decrypt file
 
 ```bash
 ansible-vault decrypt file.yml
@@ -86,15 +96,25 @@ To _view_ the file content only:
 ansible-vault view file.yml
 ```
 
----
++++
 
-### Edit encrypted file
+#### Edit encrypted file
 
 ```bash
 ansible-vault edit file.yml
 ```
-
+@ul[list-bullets-circles](false)
 * Use `edit` whenvever possible as it helps you not to check in unencrypted files!
+@ulend
 
 ---
 
+### Working with encrypted files
+
+
+
+---
+
+### Encrypt/Decrypt variables
+
+...
