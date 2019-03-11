@@ -209,3 +209,11 @@ Workarounds:
   ansible localhost -m debug -a 'var=the_secret' -e "@group_vars/all/all.yml" --ask-vault-pass
   ```
 * Use a dummy playbook
+
++++
+
+### String encryption bottom line
+
+@fa[plus-circle] Use it if you do not have a lot of sensitive data and/or if it doesn't have to be changed/looked up frequently.
+
+@fa[minus-circle] If you often have to de-/encrypt stuff this approach can get quite cumbersome.
