@@ -149,4 +149,53 @@ vault_a_secret_var: p@ssw0rd!
 
 ## Encrypt/Decrypt variables
 
-...
+Instead of whole files you can also encrypt single string values.
+
+```yaml
+the_answer: 42
+the_secret: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          65373865336330643430383932346333346431386461613831346636633263363265336238626665
+          3831316638333634336435396338376638303034373531380a313465663532303131313231613664
+          39636239616635386663333166373864396265613231353862623262373437313232346263626661
+          6137666331383864640a323438306234623233353837666439666231386265653334333264643330
+          6364
+```
+
++++
+
+### String encryption
+
+```bash
+ansible-vault encrypt_string --vault-id @prompt 'foobar' --name 'the_secret'
+```
+
+* Instead of `@prompt` a file can be provided
+  
++++
+
+### String decryption
+
+```bash
+ansible-vault decrypt_string ...
+```
+
+@css[fragment](Nope!)
+
++++
+
+### String decryption (cont'd)
+
+```bash
+ansible-vault view file-with-secret.yml
+```
+
+@css[fragment](Nope!)
+
++++?image=presentation/assets/img/confused.svg&size=auto 100%
+
+### ???
+
++++
+
+### String decryption (cont'd)
