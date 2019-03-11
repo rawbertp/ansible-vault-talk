@@ -5,7 +5,7 @@
 # Theme Setting
 # Doc: https://gitpitch.com/docs/settings/theme
 #
-theme : simple
+theme : night
 
 #
 # Theme-Override Setting
@@ -36,7 +36,7 @@ footnote : "Ansible Vault"
 # Published Setting
 # Doc: https://gitpitch.com/docs/settings/published
 #
-published : true
+published : false
 
 #
 # Twitter Card Settings [Pro Only]

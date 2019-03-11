@@ -1,4 +1,4 @@
-## Ansible Vault
+# Ansible Vault
 
 A Talk Explaining Ansible-Vault Features and Usage
 
@@ -6,7 +6,7 @@ A Talk Explaining Ansible-Vault Features and Usage
 
 ---
 
-### Introduction
+## Introduction
 
 * Ansible core feature
 * Used to encrypt sensitive data
@@ -15,11 +15,11 @@ A Talk Explaining Ansible-Vault Features and Usage
 
 ---?image=presentation/assets/img/hawaii.jpg&size=auto 100%
 
-### @color[white](Why use it?)
+## @color[white](Why use it?)
 
 ---
 
-### Documentation
+## Documentation
 
 https://docs.ansible.com/ansible/latest/user_guide/vault.html
 
@@ -27,7 +27,7 @@ https://docs.ansible.com/ansible/latest/cli/ansible-vault.html
 
 ---
 
-### Some key principles
+## Some key principles
 
 * Do not store _any_ unencrypted passwords/sensitive data _anywhere_
   * passwords, API keys, SSH keys, GDPR-relevant information, etc. pp...
@@ -37,7 +37,7 @@ https://docs.ansible.com/ansible/latest/cli/ansible-vault.html
 
 ---
 
-### Usage (1)
+## Usage (1)
 
 ```bash
 Usage: ansible-vault [create|decrypt|edit|encrypt|encrypt_string|rekey|view] [options] [vaultfile.yml]
@@ -57,7 +57,7 @@ Options:
 
 ---
 
-### Usage (2)
+## Usage (2)
 
 `ansible-vault` can be used to encrypt/decrypt
 
@@ -68,7 +68,7 @@ Options:
 
 ---
 
-### Encrypt/decrypt file
+## Encrypt/decrypt file
 
 ```bash
 ansible-vault [create|decrypt|edit|encrypt|rekey|view] [options] [vaultfile.yml]
@@ -76,7 +76,7 @@ ansible-vault [create|decrypt|edit|encrypt|rekey|view] [options] [vaultfile.yml]
 
 +++
 
-#### Encrypt file
+### Encrypt file
 
 ```bash
 ansible-vault encrypt file.yml
@@ -84,7 +84,7 @@ ansible-vault encrypt file.yml
 
 +++
 
-#### Decrypt file
+### Decrypt file
 
 ```bash
 ansible-vault decrypt file.yml
@@ -98,7 +98,7 @@ ansible-vault view file.yml
 
 +++
 
-#### Edit encrypted file
+### Edit encrypted file
 
 ```bash
 ansible-vault edit file.yml
@@ -109,12 +109,44 @@ ansible-vault edit file.yml
 
 ---
 
-### Working with encrypted files
+## Working with encrypted files
 
+@snap[south-east]
+@quote[Working with encrypted files is a PITA!]
+@snapend
 
++++
+
+### Group by stage
+
+Create isolated stage config (group_vars, host_vars) and place the vault-files accordingly.
+
+```
+.
+├── group_vars
+│   ├── all
+│   ├── prod
+│   └── uat
+```
+
++++
+
+### Use references
+
+Using _references_ (following a _naming convention_) pointing to the actual encrypted value keeps the property files read- and searchable.
+
+@size[0.5em](`group_vars/prod/vars.yml`)
+```yaml
+a_secret_var: "{{ vault_a_secret_var }}"
+```
+
+@size[0.5em](`group_vars/prod/vault.yml`)
+```yaml
+vault_a_secret_var: p@ssw0rd!
+```
 
 ---
 
-### Encrypt/Decrypt variables
+## Encrypt/Decrypt variables
 
 ...
