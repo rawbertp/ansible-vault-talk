@@ -21,9 +21,9 @@ A Talk Explaining Ansible-Vault Features and Usage
 
 ## Documentation
 
-https://docs.ansible.com/ansible/latest/user_guide/vault.html
+* https://docs.ansible.com/ansible/latest/user_guide/vault.html
 
-https://docs.ansible.com/ansible/latest/cli/ansible-vault.html
+* https://docs.ansible.com/ansible/latest/cli/ansible-vault.html
 
 ---
 
@@ -106,6 +106,14 @@ ansible-vault edit file.yml
 @ul[list-bullets-circles](false)
 * Use `edit` whenvever possible as it helps you not to check in unencrypted files!
 @ulend
+
+---
+
+### Change password
+
+```bash
+ansible-vault rekey file.yml
+```
 
 ---
 
@@ -217,3 +225,30 @@ Workarounds:
 @fa[plus-circle] Use it if you do not have a lot of sensitive data and/or if it doesn't have to be changed/looked up frequently.
 
 @fa[minus-circle] If you often have to de-/encrypt stuff this approach can get quite cumbersome.
+
+---
+
+## Vault IDs
+
+* Introduced with Ansible 2.4
+* Allows multiple passwords (however, all of them have to be provided)
+* No, you cannot encrypt one file using multiple passwords!
+* I won't go into detail here as I haven't found any valid real-life use case yet?!
+
++++
+
+### Vault IDs: Usage
+
+Encrypt file:
+
+```bash
+ansible-vault encrypt --encrypt-vault-id prod vars/vars.yml
+```
+
+Encrypt string:
+
+```bash
+ansible-vault encrypt_string --vault-id uat@./uat -n foo this-is-the-secret
+```
+
+@fa[external-link] [Further reading/examples](https://learn.redhat.com/t5/Automation-Management-Ansible/Vault-IDs-in-Ansible-2-4/td-p/1531).
