@@ -18,7 +18,7 @@ theme : night
 # https://gitpitch.com/docs/settings/logo
 #
 logo : presentation/assets/img/be-logo.png
-logo-postion : bottom-right
+logo-position : bottom-right
 
 #
 # Layout Setting
@@ -45,3 +45,5 @@ published : false
 #title : "Ansible Vault Introduction"
 #description : "A short tutorial on using Ansible Vault"
 #thumbnail : https://gitpitch.com/gpimg/tutorial-thumb.png
+
+code-line-numbers : false

@@ -252,3 +252,74 @@ ansible-vault encrypt_string --vault-id uat@./uat -n foo this-is-the-secret
 ```
 
 @fa[external-link] [Further reading/examples](https://learn.redhat.com/t5/Automation-Management-Ansible/Vault-IDs-in-Ansible-2-4/td-p/1531).
+
+---
+
+## P@ssw0rd
+
+@quote[Everything's encrypted using strong passwords!]
+
+@quote[How do we work with it now?]
+
++++
+
+### Interactive password prompt
+
+```bash
+ansible-playbook -i inventory/foo play.yml --ask-vault-pass
+```
+
++++
+
+### Password file
+
+```bash
+ansible-playbook -i inventory/foo play.yml --vault-password-file ./foo.pass
+```
+
++++
+
+### Environment variable
+
+You can also set an environment variable pointing to the password file:
+
+```bash
+export ANSIBLE_VAULT_PASSWORD_FILE=./foo.pass
+ansible-playbook -i inventory/foo play.yml --vault-password-file
+```
+
++++
+
+### Environment variable (cont'd)
+
+The referenced file can also be a script. This allows to inject the password as an environment variable, e.g. using Jenkins' credentials binding plugin.
+
+@size[0.5em](`scripts/echo-vault-pass.sh`)
+```bash
+#!/bin/bash
+if [ "$1x" != "x" ]; then
+  echo $1
+else
+  echo $ALF_VAULT_PASS
+fi
+```
+
+```bash
+export ANSIBLE_VAULT_PASSWORD_FILE=./scripts/echo-vault-pass.sh
+```
+
+---
+
+### Demo time
+
+TODO
+
+---
+
+### Q&A
+
+Thank you for listening!
+
+* Any questions?
+* Custom implementations?
+* AOB
