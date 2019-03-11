@@ -27,7 +27,7 @@ https://docs.ansible.com/ansible/latest/cli/ansible-vault.html
 
 ---
 
-### Some Key Principles
+### Some key principles
 
 * Do not store _any_ unencrypted passwords/sensitive data _anywhere_
   * passwords, API keys, SSH keys, GDPR-relevant information, etc. pp...
@@ -66,36 +66,35 @@ Options:
 
 ---
 
-### Usage: Encrypt/Decrypt Whole File
-
-#### Encrypt
+### Encrypt file
 
 ```bash
 ansible-vault encrypt file.yml
 ```
 
-#### Decrypt
+---
+
+### Decrypt file
 
 ```bash
 ansible-vault decrypt file.yml
 ```
 
----
-
-### Usage: View/Edit Encrypted File
-
-#### View
+To _view_ the file content only:
 
 ```bash
 ansible-vault view file.yml
 ```
-+++
 
-#### Edit
+---
+
+### Edit encrypted file
 
 ```bash
 ansible-vault edit file.yml
 ```
 
 * Use `edit` whenvever possible as it helps you not to check in unencrypted files!
+
+---
 
