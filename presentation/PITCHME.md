@@ -194,8 +194,18 @@ ansible-vault view file-with-secret.yml
 
 +++?image=presentation/assets/img/confused.jpg&size=auto 100%
 
-???
+### ???
 
 +++
 
 ### String decryption (cont'd)
+
+It appears Ansible hasn't fully thought this through... :-/
+
+Workarounds:
+
+* Use an ad-hoc command, e.g.:   
+  ```bash
+  ansible localhost -m debug -a 'var=the_secret' -e "@group_vars/all/all.yml" --ask-vault-pass
+  ```
+* Use a dummy playbook
