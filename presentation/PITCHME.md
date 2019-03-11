@@ -192,9 +192,9 @@ ansible-vault view file-with-secret.yml
 
 @css[fragment](Nope!)
 
-+++?image=presentation/assets/img/confused.svg&size=auto 100%
++++?image=presentation/assets/img/confused.jpg&size=auto 100%
 
-### ???
+???
 
 +++
 
