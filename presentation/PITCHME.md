@@ -17,11 +17,13 @@ A Talk Explaining Ansible-Vault Features and Usage
 
 ---?image=presentation/assets/img/hawaii.jpg&size=auto 100%
 
-## @color[white](Why use it?)
+## @color[white](What is it good for?)
+
+From DevOps to DevOops...
 
 ---
 
-## Documentation
+## #RTFM
 
 * https://docs.ansible.com/ansible/latest/user_guide/vault.html
 
@@ -31,18 +33,18 @@ A Talk Explaining Ansible-Vault Features and Usage
 
 ## Some key principles
 
-* Do not store _any_ unencrypted passwords/sensitive data _anywhere_
-  * passwords, API keys, SSH keys, GDPR-relevant information, etc. pp...
-* No exceptions apply!
-* Do not use the _same_ password for _all environments_.
-* And of course: Do not store the Vault password in unsecure places/environments!
+- Do not store _any_ unencrypted passwords/sensitive data _anywhere_
+  - passwords, API keys, SSH keys, GDPR-relevant information, etc. pp...
+- No exceptions apply!
+- Do not use the _same_ password for _all environments_.
+- And of course: Do not store the Vault password in unsecure places/environments!
 
 ---
 
 ## Usage (1)
 
 ```bash
-Usage: ansible-vault [create|decrypt|edit|encrypt|encrypt_string|rekey|view] [options] [vaultfile.yml]
+ansible-vault [create|decrypt|edit|encrypt|encrypt_string|rekey|view] [options] [vaultfile.yml]
 
 encryption/decryption utility for Ansible data files
 
@@ -70,7 +72,7 @@ Options:
 
 ---
 
-## Encrypt/decrypt file
+## [En|De]crypt files
 
 ```bash
 ansible-vault [create|decrypt|edit|encrypt|rekey|view] [options] [vaultfile.yml]
@@ -157,7 +159,7 @@ vault_a_secret_var: p@ssw0rd!
 
 ---
 
-## Encrypt/Decrypt variables
+## [En|De]crypt variables
 
 Instead of whole files you can also encrypt single string values.
 
@@ -177,7 +179,8 @@ the_secret: !vault |
 ### String encryption
 
 ```bash
-ansible-vault encrypt_string --vault-id @prompt 'foobar' --name 'the_secret'
+ansible-vault encrypt_string --vault-id @prompt 'foobar' \
+  --name 'the_secret'
 ```
 
 * Instead of `@prompt` a file can be provided
@@ -190,7 +193,7 @@ ansible-vault encrypt_string --vault-id @prompt 'foobar' --name 'the_secret'
 ansible-vault decrypt_string ...
 ```
 
-@css[fragment](Nope!)
+@css[fragment](@fa[frown-o] Nope!)
 
 +++
 
@@ -200,7 +203,7 @@ ansible-vault decrypt_string ...
 ansible-vault view file-with-secret.yml
 ```
 
-@css[fragment](Nope!)
+@css[fragment](@fa[frown-o] Nope!)
 
 +++?image=presentation/assets/img/confused.jpg&size=auto 100%
 
@@ -216,7 +219,8 @@ Workarounds:
 
 * Use an ad-hoc command, e.g.:   
   ```bash
-  ansible localhost -m debug -a 'var=the_secret' -e "@group_vars/all/all.yml" --ask-vault-pass
+  ansible localhost -m debug -a 'var=the_secret' \
+    -e "@group_vars/all/all.yml" --ask-vault-pass
   ```
 * Use a dummy playbook
 
@@ -250,7 +254,8 @@ ansible-vault encrypt --encrypt-vault-id prod vars/vars.yml
 Encrypt string:
 
 ```bash
-ansible-vault encrypt_string --vault-id uat@./uat -n foo this-is-the-secret
+ansible-vault encrypt_string --vault-id uat@./uat -n \
+  foo this-is-the-secret
 ```
 
 @fa[external-link] [Further reading/examples](https://learn.redhat.com/t5/Automation-Management-Ansible/Vault-IDs-in-Ansible-2-4/td-p/1531).
@@ -276,7 +281,8 @@ ansible-playbook -i inventory/foo play.yml --ask-vault-pass
 ### Password file
 
 ```bash
-ansible-playbook -i inventory/foo play.yml --vault-password-file ./foo.pass
+ansible-playbook -i inventory/foo play.yml \
+  --vault-password-file ./foo.pass
 ```
 
 +++
