@@ -1,8 +1,10 @@
-# Ansible Vault
+
+
+## @img[clean-img bg-black span-10](presentation/assets/img/ansible.png)Ansible Vault
 
 A Talk Explaining Ansible-Vault Features and Usage
 
-@size[0.8em](2019 | BearingPoint Technology GmbH | T/\S | robert.porisenko@bearingpoint.com)
+@size[0.5em](2019 | BearingPoint Technology GmbH | T/\S | robert.porisenko@bearingpoint.com)
 
 ---
 
@@ -292,7 +294,7 @@ ansible-playbook -i inventory/foo play.yml --vault-password-file
 
 ### Environment variable (cont'd)
 
-The referenced file can also be a script. This allows to inject the password as an environment variable, e.g. using Jenkins' credentials binding plugin.
+The referenced file can also be a script. This allows to inject the password as an environment variable, e.g. using the Jenkins credentials binding plugin.
 
 @size[0.5em](`scripts/echo-vault-pass.sh`)
 ```bash

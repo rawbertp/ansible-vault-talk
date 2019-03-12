@@ -2,27 +2,34 @@
     margin:0 0 10px 0;
   }
   
-  .shadow {
-    box-shadow:0 14px 20px 0 rgba(0,0,0,0.2),0 10px 24px 0 rgba(0,0,0,0.19) !important;
-  }
-  
-  .headline h2 {
-    /*color: white;*/
-    letter-spacing: 0.05em;
-    font-variant: small-caps;
-  }
-  
-  .reveal section img {
-    background: none;
-    border: none;
-    box-shadow: none;
-  }
-  
-  .reveal a {
-    color: cornflowerblue;
-  }
-  
-  .reveal a:hover {
-    /*color: white;*/
-    font-weight: bold;
-  }
+.shadow {
+  box-shadow:0 14px 20px 0 rgba(0,0,0,0.2),0 10px 24px 0 rgba(0,0,0,0.19) !important;
+}
+
+.headline h2 {
+  /*color: white;*/
+  letter-spacing: 0.05em;
+  font-variant: small-caps;
+}
+
+.reveal section img {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.reveal a {
+  color: cornflowerblue;
+}
+
+.reveal a:hover {
+  /*color: white;*/
+  font-weight: bold;
+}
+
+.reveal section img .clean-img {
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+

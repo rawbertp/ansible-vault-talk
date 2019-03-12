@@ -11,7 +11,7 @@ theme : night
 # Theme-Override Setting
 # Doc: https://gitpitch.com/docs/settings/custom-theme
 #
-#theme-override: presentation/assets/css/PITCHME.css
+theme-override: presentation/assets/css/PITCHME.css
 
 #
 # Logo Setting
