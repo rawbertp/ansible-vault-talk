@@ -17,7 +17,7 @@ A Talk Explaining Ansible-Vault Features and Usage
 
 ---?image=presentation/assets/img/hawaii.jpg&size=auto 100%
 
-## @color[white](What is it good for?)
+## What is it<br/>good for?
 
 From DevOps to DevOops...
 
@@ -94,8 +94,7 @@ ansible-vault encrypt file.yml
 ansible-vault decrypt file.yml
 ```
 
-To _view_ the file content only:
-
+@fa[info](Use `view` whenever possible)
 ```bash
 ansible-vault view file.yml
 ```
@@ -107,9 +106,8 @@ ansible-vault view file.yml
 ```bash
 ansible-vault edit file.yml
 ```
-@ul[list-bullets-circles](false)
-* Use `edit` whenvever possible as it helps you not to check in unencrypted files!
-@ulend
+
+@fa[info](Use `edit` whenvever possible as it helps you not to check in unencrypted files!)
 
 ---
 
@@ -322,14 +320,18 @@ export ANSIBLE_VAULT_PASSWORD_FILE=./scripts/echo-vault-pass.sh
 
 ### Demo time
 
-TODO
+@snap[midpoint]
+@fa[hourglass]
+@snapend
 
 ---
 
-### Q&A
+### @fa[comments-o] Q&A
 
-Thank you for listening!
+@fa[handshake-o] Thank you for listening!
 
-* Any questions?
-* Custom implementations?
-* AOB
+@fa[question] Any questions?
+
+@fa[bullhorn] Feedback/Custom implementations?
+
+@fa[star] AOB
