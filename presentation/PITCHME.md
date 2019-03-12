@@ -205,9 +205,11 @@ ansible-vault view file-with-secret.yml
 
 @css[fragment](@fa[frown-o] Nope!)
 
-+++?image=presentation/assets/img/confused.jpg&size=auto 100%
++++
 
-### ???
+@snap[midpoint]
+@fa[meh-o fa-5x]
+@snapend
 
 +++
 
@@ -219,7 +221,7 @@ Workarounds:
 
 * Use an ad-hoc command, e.g.:   
   ```bash
-  ansible localhost -m debug -a 'var=the_secret' \
+  ansible localhost -m debug -a 'var=the_secret' \        
     -e "@group_vars/all/all.yml" --ask-vault-pass
   ```
 * Use a dummy playbook
