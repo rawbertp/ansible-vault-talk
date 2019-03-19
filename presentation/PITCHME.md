@@ -19,15 +19,15 @@ A Talk Explaining Ansible-Vault Features and Usage
 
 ## What is it<br/>good for?
 
-From DevOps to DevOops...
+From DevOps to @color[red](DevOops...)
 
 ---
 
-## #RTFM
+## #RTFM 🧐
 
-* https://docs.ansible.com/ansible/latest/user_guide/vault.html
+@fa[external-link] [User Guide](https://docs.ansible.com/ansible/latest/user_guide/vault.html)
 
-* https://docs.ansible.com/ansible/latest/cli/ansible-vault.html
+@fa[external-link] [CLI Manual](https://docs.ansible.com/ansible/latest/cli/ansible-vault.html)
 
 ---
 
@@ -181,7 +181,7 @@ ansible-vault encrypt_string --vault-id @prompt 'foobar' \
   --name 'the_secret'
 ```
 
-* Instead of `@prompt` a file can be provided
+@fa[info](Instead of `@prompt` a file can be provided)
   
 +++
 
@@ -206,14 +206,14 @@ ansible-vault view file-with-secret.yml
 +++
 
 @snap[midpoint]
-@fa[meh-o fa-5x]
+@size[3.5em](🙄)
 @snapend
 
 +++
 
 ### String decryption (cont'd)
 
-It appears Ansible hasn't fully thought this through... :-/
+_It appears Ansible hasn't fully thought this through..._
 
 Workarounds:
 
