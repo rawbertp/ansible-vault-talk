@@ -215,6 +215,8 @@ ansible-vault view file-with-secret.yml
 
 _It appears Ansible hasn't fully thought this through..._
 
+@fa[external-link] https://github.com/ansible/ansible/issues/26190
+
 Workarounds:
 
 * Use an ad-hoc command, e.g.:   
